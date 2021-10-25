@@ -1,4 +1,4 @@
 
-const Logo = () => { return <div>Logo</div>; };
+const Logo = () => <div>Logo</div>; 
 
 export default Logo;

@@ -11,7 +11,7 @@ function mapCourseToAuthors (course) {
 }
 
 
-function App() {
+const App = () => {
 
 
   const courses = mockedCoursesList.map(mapCourseToAuthors);
@@ -19,10 +19,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Header individuumName='Dave'>        
-      </Header>
-
-      <Courses items={courses}></Courses>
+      <Header individuumName='Dave' />        
+      <Courses items={courses} />
     </div>
     </ThemeProvider>
   );

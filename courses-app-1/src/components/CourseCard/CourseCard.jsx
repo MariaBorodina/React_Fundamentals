@@ -1,6 +1,7 @@
 import { Grid, ListItem,  Typography } from "@mui/material";
 import MyButton from "../Button/Button";
 import Field from '../Field/Field';
+import PropTypes from 'prop-types';
 
 const CourseCard = ({item}) => {
     return (
@@ -16,7 +17,7 @@ const CourseCard = ({item}) => {
             <Grid container direction='column'>
               <Field name="Authors" value={item.authorList}> </Field>
               <Field name="Duration" value={item.duration} > </Field>
-              <Field name="Created" value={item.created} > </Field>
+              <Field name="Created" value={item.creationDate} > </Field>
 
               <MyButton>Show course</MyButton>
             </Grid>
@@ -27,4 +28,12 @@ const CourseCard = ({item}) => {
     )
 }
 
+CourseCard.propTypes = {
+  title: PropTypes.string,
+  description:  PropTypes.string,
+  authorList:  PropTypes.string,
+  duration:  PropTypes.number,
+  creationDate:  PropTypes.string
+};
+ 
 export default CourseCard;

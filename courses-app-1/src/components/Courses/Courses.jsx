@@ -1,7 +1,7 @@
 import List from '@mui/material/List';
 import CourseCard from '../CourseCard/CourseCard';
 
-const Courses = function(props) {
+const Courses = (props) => {
 
     return (
         <List>
