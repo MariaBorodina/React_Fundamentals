@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material";
 
 
-const CreateCourse = () => {
+const Registration = () => {
 
     return (
     <Typography variant="h2">
-        Create Course
+        Registration
     </Typography>
     );
 }
 
-export default CreateCourse;
+export default Registration;
