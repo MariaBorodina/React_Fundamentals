@@ -2,6 +2,7 @@ import List from '@mui/material/List';
 import CourseCard from '../CourseCard/CourseCard';
 
 const Courses = (props) => {
+    document.title = "Courses";
 
     return (
         <List>

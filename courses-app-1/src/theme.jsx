@@ -1,4 +1,12 @@
+import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
+import { padding } from '@mui/system';
+
+const constants = {
+  borderRadius: '0.2em',
+
+}
+
 
 const theme = createTheme({
     spacing: 4,
@@ -18,13 +26,13 @@ const theme = createTheme({
                 // Some CSS
                 fontSize: '1rem',
                 border: '#ff2200 solid 1px',
-                borderRadius: '0.2em',
+                borderRadius: `${constants.borderRadius}`,
                 margin: '1em',
                 width: 'inherit',
                 padding: '1em',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-
+                marginBottom: '3em'
               },
 
               '&.right': {
@@ -47,7 +55,7 @@ const theme = createTheme({
               // Some CSS
               fontSize: '1rem',
               border: 'lightblue solid 1px',
-              borderRadius: '0.2em',
+              borderRadius: `${constants.borderRadius}`,
               margin: '1em',
               width: 'inherit',
             },
@@ -62,7 +70,7 @@ const theme = createTheme({
               // Some CSS
               fontSize: '1rem',
               border: '#00aa55 solid 1px',
-              borderRadius: '0.2em',
+              borderRadius: `${constants.borderRadius}`,
               margin: '1em',
               width: 'inherit',
             },
@@ -103,10 +111,45 @@ const theme = createTheme({
               fontWeight: '600',
             },
           }
-        }
+        },
+
+        MuiInputLabel: {
+          styleOverrides: {
+            root:{
+              textAlign: "left",
+            }
+          }
+        },
+
+        MuiOutlinedInput: {
+          styleOverrides: {
+            root:{
+              "&  fieldset": {
+              borderColor: "orange",
+              borderRadius: `${constants.borderRadius}`,
+            },
+
+              "& input": {
+                padding: 5,
+              },
+            }
+          }
+        },
+
+        MuiGrid: {
+          styleOverrides: {
+            container: {
+              "&.inputForm": {
+                alignItems: "center",
+                margin: '2em',
+                width: 'unset'
+              }
+            }
+          }
+        },
+
+
       },
-
-
 });
 
 
