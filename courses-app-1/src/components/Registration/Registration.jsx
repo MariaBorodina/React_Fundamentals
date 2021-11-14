@@ -2,7 +2,7 @@ import { Button, Grid, Box, Typography } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
 import Input from '../Input/Input';
 import { useState } from "react";
-
+import HttpUtils from "../../utils/HttpUtils";
 
 
 const Registration = () => {
@@ -23,24 +23,14 @@ const Registration = () => {
 
 const register = async () =>
 {
-    const API_URL = "http://localhost:3000";
     const REGISTER_URL = "/register";
 
-    const response = await fetch( API_URL + REGISTER_URL,
-        {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        } );
+    const response = await HttpUtils.post(REGISTER_URL, data);
 
-    if(!response.ok) {
-        console.log("ERROR: " + response.statusText);
-        const result = await response.json();
-        console.log(JSON.stringify(result));
-
+    if(!response.successful) {
         setError({
             isError: true,
-            message: response.statusText + ": " + result.errors.toString()
+            message: response.statusText + ": " + response.errors.toString()
         });
 
     }
