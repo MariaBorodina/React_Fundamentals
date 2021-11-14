@@ -27,10 +27,10 @@ const register = async () =>
 
     const response = await HttpUtils.post(REGISTER_URL, data);
 
-    if(!response.successful) {
+    if(!response["successful"]) {
         setError({
             isError: true,
-            message: response.statusText + ": " + response.errors.toString()
+            message: response["errors"].toString()
         });
 
     }
@@ -46,7 +46,8 @@ const register = async () =>
 }
 
 
-const handleRegister = () => {
+const handleRegister = (e) => {
+    e.stopPropagation();
     register();
 };
 
@@ -54,6 +55,7 @@ const handleRegister = () => {
         <>
             <Typography variant="h2">Registration</Typography>
 
+            <form onSubmit={(e) => handleRegister}>
                 <Grid container spacing={8} direction="column" className="inputForm">
 
                     <Grid item className="errorMessage"   display={!error.isError ? "none" : "initial"}>
@@ -77,9 +79,7 @@ const handleRegister = () => {
                             onChange={(e) => setData({...data, password:e.target.value})} />
                     </Grid>
                     <Grid item>
-                        <Button
-                            onClick={handleRegister}
-                        >Registration</Button>
+                        <Button type="submit" >Registration</Button>
                     </Grid>
                     <Grid item>
                         <Box direction="row">
@@ -88,6 +88,7 @@ const handleRegister = () => {
                         </Box>
                     </Grid>
                 </Grid>
+                </form>
         </>
     );
 }
