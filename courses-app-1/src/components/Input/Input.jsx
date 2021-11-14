@@ -1,10 +1,10 @@
 import { OutlinedInput, InputLabel,  Stack } from "@mui/material";
 
-const Input = ({label, placeholder}) => {
+const Input = (props) => {
     return(
         <Stack>
-            <InputLabel>{label}</InputLabel>
-            <OutlinedInput placeholder={placeholder}>               
+            <InputLabel>{props.label}</InputLabel>
+            <OutlinedInput {...props}>               
             </OutlinedInput>
         </Stack>
     );

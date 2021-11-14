@@ -1,6 +1,4 @@
-import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
-import { padding } from '@mui/system';
 
 const constants = {
   borderRadius: '0.2em',
@@ -143,6 +141,11 @@ const theme = createTheme({
                 alignItems: "center",
                 margin: '2em',
                 width: 'unset'
+              }
+            },
+            item: {
+              "&.errorMessage": {              
+                color: "red"
               }
             }
           }
