@@ -46,7 +46,7 @@ const theme = createTheme({
 
 
         // Name of the component
-        MuiList: {
+        MuiPaper: {
           styleOverrides: {
             // Name of the slot
             root: {
@@ -56,6 +56,7 @@ const theme = createTheme({
               borderRadius: `${constants.borderRadius}`,
               margin: '1em',
               width: 'inherit',
+              boxShadow: "none",
             },
           },
         },
@@ -108,6 +109,15 @@ const theme = createTheme({
               fontSize: '1.2em',
               fontWeight: '600',
             },
+            
+            h3: {
+              fontSize: '1em',
+              fontWeight: '400',
+            },
+
+            p: {
+              textAlign: "left",
+            },
           }
         },
 
@@ -136,21 +146,42 @@ const theme = createTheme({
 
         MuiGrid: {
           styleOverrides: {
+            root: {
+              textAlign: "left",
+              boxSizing: "border-box",
+              margin: 0,
+            },
+
             container: {
               "&.inputForm": {
                 alignItems: "center",
                 margin: '2em',
-                width: 'unset'
+                width: 'unset',
               }
             },
             item: {
               "&.errorMessage": {              
-                color: "red"
+                color: "red",
               }
             }
           }
         },
 
+        MuiLink: {
+          styleOverrides: {
+            root: {
+              "&.goBackLink": {
+                margin: '2em',
+                display: "flex",
+                textDecoration: "none",
+                color: "black",              
+              },
+              "&.goBackLink:focus": {
+                textDecoration: "underline",
+              },
+            },
+          }
+        },
 
       },
 });
