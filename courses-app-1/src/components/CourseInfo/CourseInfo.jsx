@@ -6,11 +6,10 @@ import {mockedCoursesList, mockedAuthorsList} from '../../mockData/data';
 
 
 const CourseInfo = (props) => {
-    const params = useParams();
-    let courseId = params["courseId"];
+    let { courseId } = useParams();
     courseId = courseId.substring(courseId.indexOf(":")+1, courseId.length);
 
-    const course = mockedCoursesList.find(c => c.id === courseId);
+   const course = mockedCoursesList.find(c => c.id === courseId);
 
     if(!course)
     {

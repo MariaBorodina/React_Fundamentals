@@ -9,7 +9,7 @@ import Registration from './components/Registration/Registration';
 import Layout from './components/Layout';
 import CourseInfo from './components/CourseInfo/CourseInfo';
 
-function mapCourseToAuthors (course) {
+const mapCourseToAuthors = (course) => {
   course.authorList = course.authors.map(authorId => mockedAuthorsList.find(author => author.id === authorId)?.name).join(", ");
   return course;
 }
