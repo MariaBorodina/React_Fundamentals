@@ -21,41 +21,41 @@ const Registration = () => {
 
     let history = useHistory();
 
-const register = async () =>
-{
-    const REGISTER_URL = "/register";
-
-    const response = await HttpUtils.post(REGISTER_URL, data);
-
-    if(!response["successful"]) {
-        setError({
-            isError: true,
-            message: response["errors"].toString()
-        });
-
-    }
-    else
+    const register = async () =>
     {
-        setError({
-            isError: false,
-            message: ""
-        });
+        const REGISTER_URL = "/register";
 
-        history.push("/Login");
+        const response = await HttpUtils.post(REGISTER_URL, data);
+
+        if(!response["successful"]) {
+            setError({
+                isError: true,
+                message: response["errors"].toString()
+            });
+
+        }
+        else
+        {
+            setError({
+                isError: false,
+                message: ""
+            });
+
+            history.push("/Login");
+        }
     }
-}
 
 
-const handleRegister = (e) => {
-    e.stopPropagation();
-    register();
-};
+    const handleRegister = (e) => {
+        e.stopPropagation();
+        register();
+    };
 
     return (
         <>
             <Typography variant="h2">Registration</Typography>
 
-            <form onSubmit={(e) => handleRegister}>
+            {/* <form onSubmit={(e) => handleRegister}> */}
                 <Grid container spacing={8} direction="column" className="inputForm">
 
                     <Grid item className="errorMessage"   display={!error.isError ? "none" : "initial"}>
@@ -79,7 +79,7 @@ const handleRegister = (e) => {
                             onChange={(e) => setData({...data, password:e.target.value})} />
                     </Grid>
                     <Grid item>
-                        <Button type="submit" >Registration</Button>
+                        <Button type="submit" onClick={ handleRegister}>Registration</Button>
                     </Grid>
                     <Grid item>
                         <Box direction="row">
@@ -88,7 +88,7 @@ const handleRegister = (e) => {
                         </Box>
                     </Grid>
                 </Grid>
-                </form>
+                {/* </form> */}
         </>
     );
 }
