@@ -1,10 +1,11 @@
-import { Button } from "@mui/material";
+import { Button } from '@mui/material';
 
-const MyButton = (props) => {
-    return(
-        <Button {...props}>{props.children}
-        </Button>
-    );
+const MyButton = function (props) {
+  return (
+    <Button {...props}>
+      {props.children}
+    </Button>
+  );
 };
 
 export default MyButton;
