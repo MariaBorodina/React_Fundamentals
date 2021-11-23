@@ -1,13 +1,11 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
-
-const CreateCourse = () => {
-
-    return (
+const CreateCourse = function () {
+  return (
     <Typography variant="h2">
-        Create Course
+      Create Course
     </Typography>
-    );
-}
+  );
+};
 
 export default CreateCourse;

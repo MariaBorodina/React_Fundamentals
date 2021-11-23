@@ -1,13 +1,12 @@
-import { OutlinedInput, InputLabel,  Stack } from "@mui/material";
+import { OutlinedInput, InputLabel, Stack } from '@mui/material';
 
-const Input = (props) => {
-    return(
-        <Stack>
-            <InputLabel>{props.label}</InputLabel>
-            <OutlinedInput {...props}>               
-            </OutlinedInput>
-        </Stack>
-    );
-}
+const Input = function (props) {
+  return (
+    <Stack>
+      <InputLabel>{props.label}</InputLabel>
+      <OutlinedInput {...props} />
+    </Stack>
+  );
+};
 
 export default Input;
