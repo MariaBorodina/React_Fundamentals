@@ -4,8 +4,10 @@ import Field from '../Field/Field';
 import PropTypes from 'prop-types';
 
 const CourseCard = ({item}) => {
+    document.title = item.title;
+
     return (
-    <ListItem>
+    <ListItem data-testid='courseCard'>
         <Grid container direction='row'>
 
           <Grid container  item xs={8} md={9} direction='column'>
