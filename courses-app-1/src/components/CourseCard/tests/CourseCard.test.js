@@ -18,8 +18,30 @@ test('renders CourseCard component', () => {
 
 test('CourseCard should display title', () => {
     render(<CourseCard item={item} />);
-    const linkElement = screen.getByText('Title');
+    const linkElement = screen.getByText(item.title);
     expect(linkElement).toBeInTheDocument();
   });
 
+  test('CourseCard should display description', () => {
+    render(<CourseCard item={item} />);
+    const linkElement = screen.getByText(item.description);
+    expect(linkElement).toBeInTheDocument();
+  });
 
+  test('CourseCard should display authors list', () => {
+    render(<CourseCard item={item} />);
+    const linkElement = screen.getByText(item.authorList);
+    expect(linkElement).toBeInTheDocument();
+  });
+  
+  test('CourseCard should display duration in the correct format', () => {
+    render(<CourseCard item={item} />);
+    const linkElement = screen.getByText(item.duration);
+    expect(linkElement).toBeInTheDocument();
+  });
+  
+  test('CourseCard should display created date in the correct format', () => {
+    render(<CourseCard item={item} />);
+    const linkElement = screen.getByText(item.creationDate);
+    expect(linkElement).toBeInTheDocument();
+  });
