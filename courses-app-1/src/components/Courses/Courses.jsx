@@ -4,7 +4,7 @@ import CourseCard from '../CourseCard/CourseCard';
 const Courses = (props) => {
 
     return (
-        <List>
+        <List data-testid='courses'>
             {props.items.map(course => 
                 <CourseCard item={course} key={course.id}></CourseCard>)}
         </List>
