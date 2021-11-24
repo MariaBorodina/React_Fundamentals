@@ -2,9 +2,16 @@ import { Grid, ListItem,  Typography } from "@mui/material";
 import MyButton from "../Button/Button";
 import Field from '../Field/Field';
 import PropTypes from 'prop-types';
+import { useHistory } from "react-router";
 
 const CourseCard = ({item}) => {
     document.title = item.title;
+
+  const history = useHistory();
+  const handleShowCourse = () => {
+    history.push("/course/:" + item.id);
+  };
+
 
     return (
     <ListItem data-testid='courseCard'>
@@ -21,7 +28,7 @@ const CourseCard = ({item}) => {
               <Field name="Duration" value={item.duration} > </Field>
               <Field name="Created" value={item.creationDate} > </Field>
 
-              <MyButton>Show course</MyButton>
+              <MyButton onClick={handleShowCourse}>Show course</MyButton>
             </Grid>
           </Grid>
 
