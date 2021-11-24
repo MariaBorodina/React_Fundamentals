@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from "react-router";
 
 const CourseCard = ({item}) => {
+    document.title = item.title;
 
   const history = useHistory();
   const handleShowCourse = () => {
@@ -13,7 +14,7 @@ const CourseCard = ({item}) => {
 
 
     return (
-    <ListItem>
+    <ListItem data-testid='courseCard'>
         <Grid container direction='row'>
 
           <Grid container  item xs={8} md={9} direction='column'>

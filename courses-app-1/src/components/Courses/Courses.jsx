@@ -7,7 +7,7 @@ const Courses = (props) => {
 
     return (
     <Paper>
-        <List>
+        <List data-testid='courses'>
             {props.items.map(course => 
                 <CourseCard item={course} key={course.id}></CourseCard>)}
         </List>
